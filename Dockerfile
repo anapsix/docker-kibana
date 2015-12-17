@@ -1,5 +1,5 @@
 FROM alpine
-ENV KIBANA_VERSION 4.2.2
+ENV KIBANA_VERSION 4.3.0
 RUN apk upgrade --update && \
     apk add wget tar ca-certificates nodejs && \
     wget --no-check-certificate https://download.elastic.co/kibana/kibana/kibana-$KIBANA_VERSION-linux-x64.tar.gz -O /tmp/kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
