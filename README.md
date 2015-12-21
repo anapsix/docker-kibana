@@ -1,6 +1,6 @@
 
 [Official Kibana image](https://registry.hub.docker.com/_/kibana/) was recently added to the Docker Hub.  
-It's 184MB, while it easy enough to make a smaller one.. Here it is.
+It's 260MB, while it easy enough to make one 2x lighter.. Here it is.
 
 | this one | official |
 | -------- | -------- |
