@@ -1,5 +1,5 @@
-FROM alpine
-ENV KIBANA_VERSION 4.3.0
+FROM alpine:3.3
+ENV KIBANA_VERSION 4.3.1
 RUN apk upgrade --update && \
     apk add wget tar ca-certificates nodejs && \
     wget --no-check-certificate https://download.elastic.co/kibana/kibana/kibana-$KIBANA_VERSION-linux-x64.tar.gz -O /tmp/kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
@@ -7,8 +7,8 @@ RUN apk upgrade --update && \
     tar -C /opt -xzf /tmp/kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
     ln -s /opt/kibana-$KIBANA_VERSION-linux-x64 /opt/kibana && \
     rm -r /tmp/* /opt/kibana/node && \
-    apk del --purge wget tar ca-certificates
-RUN sed -i 's/NODE=.*/NODE=$(which node)/g' /opt/kibana/bin/kibana
+    apk del --purge wget tar ca-certificates && \
+    sed -i 's/NODE=.*/NODE=$(which node)/g' /opt/kibana/bin/kibana
 COPY ./docker-entrypoint.sh /entrypoint.sh
 COPY ./gosu /usr/local/bin/gosu
 WORKDIR /opt/kibana

@@ -10,8 +10,9 @@ It's 260MB, while it easy enough to make one 2x lighter.. Here it is.
 
 |  tag   | version |
 | :----- | ------- |
-| latest |  4.3.0  |
-| 4.3    |  4.3.0  |
+| latest |  4.3.1  |
+| 4.3    |  4.3.1  |
+| 4.3.1  |  4.3.1  |
 | 4.3.0  |  4.3.0  |
 | 4.2    |  4.2.1  |
 | 4.2.1  |  4.2.1  |
@@ -24,5 +25,5 @@ It's 260MB, while it easy enough to make one 2x lighter.. Here it is.
 
     docker run -it --rm \
       -e ELASTICSEARCH_URL="http://kibana.acmecorp.com:9200" \
-      -p 5601:5601 kibana
+      -p 5601:5601 anapsix/kibana
 
